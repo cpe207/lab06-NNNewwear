@@ -7,12 +7,10 @@ const getTodo = async (todoId: number) => {
   try {
     const A = await axios.get("https://jsonplaceholder.typicode.com/todos/" + todoId);
     const B = A.data;
-
     const C = await axios.get("https://jsonplaceholder.typicode.com/users/" + B.userId);
-    const D = C.data.name;
-
     return {
-      owner: D,
+      
+      owner: C.data.name,
       title: B.title,
       completed:  B.completed
     };
