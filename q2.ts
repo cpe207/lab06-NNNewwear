@@ -9,7 +9,6 @@ const getTodo = async (todoId: number) => {
     const B = A.data;
     const C = await axios.get("https://jsonplaceholder.typicode.com/users/" + B.userId);
     return {
-      
       owner: C.data.name,
       title: B.title,
       completed:  B.completed
