@@ -5,16 +5,16 @@ import {resourceUsage} from "process";
 /* assign interface/type to the function definition properly */
 const getTodo = async (todoId: number) => {
   try {
-    const todos = await axios.get("https://jsonplaceholder.typicode.com/todos/" + todoId);
-    const Todo = todos.data;
+    const A = await axios.get("https://jsonplaceholder.typicode.com/todos/" + todoId);
+    const B = A.data;
 
-    const names = await axios.get("https://jsonplaceholder.typicode.com/users/" + Todo.userId);
-    const namer = names.data.name;
+    const C = await axios.get("https://jsonplaceholder.typicode.com/users/" + B.userId);
+    const D = C.data.name;
 
     return {
-      owner: namer,
-      title: Todo.title,
-      completed:  Todo.completed
+      owner: D,
+      title: B.title,
+      completed:  B.completed
     };
   }
   catch (err) {
