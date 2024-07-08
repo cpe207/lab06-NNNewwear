@@ -1,6 +1,6 @@
 // const axios = require("axios");
 import axios from "axios";
-import { title } from "process";
+// import { title } from "process";
 
 /* assign interface/type to the function definition properly */
 const getTodo = async (todoId: number) => {
@@ -15,7 +15,7 @@ const getTodo = async (todoId: number) => {
       owner: namer,
       title: Todo.title,
       completed:  Todo.completed
-    }
+    };
   }
   catch (err) {
     return  "INVALID USER ID";
